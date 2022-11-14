@@ -13,6 +13,7 @@ class Scrap(metaclass=ABCMeta):
 
     def _getPage(self, url):
         body = self._session.get(url)
+        print (body)
         return bs(body.text, 'html.parser')
 
     def _postPage(self, url, data):
